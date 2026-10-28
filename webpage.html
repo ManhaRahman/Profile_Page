@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntax Bytes // Cyber & Research Hub</title>
+    <style>
+        :root {
+            --bg-dark: #090514;
+            --purple-dark: #140d2b;
+            --purple-neon: #8b5cf6;
+            --lavender: #d8b4fe;
+            --light-blue: #38bdf8;
+            --white: #ffffff;
+            --text-muted: #94a3b8;
+            --terminal-green: #4ade80;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(0,0,0,0) 70%);
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 0 2rem 0;
+            border-bottom: 1px dashed rgba(139, 92, 246, 0.3);
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid var(--purple-neon);
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+            margin: 0 auto 1.5rem auto;
+            object-fit: cover;
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--white);
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+        }
+
+        .status-bar {
+            font-size: 0.9rem;
+            color: var(--light-blue);
+            background: rgba(56, 189, 248, 0.1);
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 4px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: rgba(20, 13, 43, 0.6);
+            border: 1px solid rgba(216, 180, 254, 0.15);
+            backdrop-filter: blur(12px);
+            border-radius: 12px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--purple-neon);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.25);
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--light-blue);
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--lavender);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .cyber-list {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .cyber-list li {
+            font-size: 0.9rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cyber-list li::before {
+            content: ">>";
+            color: var(--terminal-green);
+            font-weight: bold;
+        }
+
+        .academy-box {
+            background: #05020a;
+            border-left: 3px solid var(--purple-neon);
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: var(--terminal-green);
+        }
+
+        .terminal-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px dashed rgba(139, 92, 246, 0.3);
+        }
+
+        .action-link {
+            color: var(--lavender);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .action-link:hover {
+            color: var(--light-blue);
+            text-shadow: 0 0 8px var(--light-blue);
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .full-width {
+                grid-column: span 1;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Re-make Active: Image tag placed directly into header -->
+        <header>
+            <img src="Me.jpg" alt="My Profile Picture" class="profile-img">
+            <h1>SYSTEM://11_YEAR_OLD_CREATOR</h1>
+            <p class="status-bar">STATUS: Cyber Security, Deep Research &amp; Academics</p>
+        </header>
+
+        <main class="grid">
+            
+            <!-- Syntax Bytes Section -->
+            <section class="card full-width">
+                <span class="card-tag">Private Academy</span>
+                <h2>⚡ Syntax Bytes</h2>
+                <p>My exclusive coding boot camp. Only one elite student has cleared the strict background check to study here: my brother. Building advanced frameworks side by side.</p>
+                <div class="academy-box">
+                    instructor@syntax-bytes:~# running_courses --student=brother<br>
+                    [✓] HTML &amp; CSS Framework: Active.
+                </div>
+            </section>
+
+            <!-- Tech Focus Section -->
+            <section class="card">
+                <span class="card-tag">Core Lab</span>
+                <h2>🔒 Hacking &amp; AI Intelligence</h2>
+                <p>Analyzing vulnerabilities, structural defenses, and automated computing models.</p>
+                <ul class="cyber-list">
+                    <li>Cryptographic Hashes &amp; Salts</li>
+                    <li>Artificial Intelligence Protocols</li>
+                    <li>Software Vulnerabilities &amp; Exploits</li>
+                </ul>
+            </section>
+
+            <!-- Research Vault -->
+            <section class="card">
+                <span class="card-tag">Knowledge Bank</span>
+                <h2>🧠 Deep Research &amp; Hobbies</h2>
+                <p>I thrive on investigating complex topics for homework, personal tech quests, and extra-curricular challenges. Verified milestones unlocked through active research sprints. When I don't weave the bytes, I imagine stories or read books. And guess... my diary is often told secrets beyond the boundary.</p>
+                <ul class="cyber-list">
+                    <li>School &amp; Personal Research Projects</li>
+                    <li>Academic Achievements</li>
+                    <li>Earned Training Certificates Unlocked</li>
+                </ul>
+            </section>
+
+        </main>
+
+        <footer class="terminal-actions">
+            <a href="https://github.com/ManhaRahman" class="action-link">[ GitHub ]</a>
+            <a href="https://tryhackme.com/p/BgB1T3" class="action-link">[ Access TryHackMe Account ]</a>
+        </footer>
+    </div>
+
+</body>
+</html>
